@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="card-wrapper">
-        <div id="card"></div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/atropos@2/atropos.min.mjs">
-
-    </script>
+    <div id="card-wrapper" class="atropos">
+        <div class="atropos-scale">
+          <div class="atropos-rotate">
+            <div class="atropos-inner">
+                <div data-atropos-offset="1" id="card">
+                  <div id="contents">
+                    <div>
+                      <h2>card</h2>
+                      <h3>Bank Name</h3>
+                    </div>
+                    <img src="cardchip.png" alt="">
+                    <div>
+                      <h1>0000 0000 0000 0000</h1>
+                      <h3>0123</h3>
+                      <h3>Exp&nbsp;<span>></span>&nbsp;5/22</h3>
+                    </div>
+                    <h1>Name Surname</h1>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
