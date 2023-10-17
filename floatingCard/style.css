@@ -1,9 +1,15 @@
+@font-face {
+    font-family: Rounded;
+    src: url(M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf);
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Rounded;
 }
 
 h1,
@@ -24,6 +30,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: gray;
 }
 
 #card-wrapper {
@@ -40,11 +47,29 @@ body {
     height: 100%;
 }
 
+#card-shadow {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #00000066;
+    box-shadow: 0 1px 15px 5px #00000077;
+    position: absolute;
+    z-index: -2;
+}
+
+#card-sides {
+    position: absolute;
+    z-index: -1;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+}
+
 #card {
     width: 100%;
     height: 100%;
     background-color: gray;
-    box-shadow: 0 1px 10px 2px #000000ee;
     border-radius: 15px;
     padding: 1rem;
     background-color: #0f0f0f; /* Set a background color */
@@ -52,13 +77,10 @@ body {
     background-size: 16px 16px; /* Adjust the size of the dots */
   }
 
-/* #card:hover {
-    box-shadow: 0 1px 10px 5px #000000ee;
-} */
-
 #contents {
     width: 100%;
     height: 100%;
+    padding-bottom: 2rem;
 }
 
 #contents div:nth-child(1) {
@@ -67,6 +89,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.4rem;
 }
 
 #contents img {
@@ -76,10 +99,37 @@ body {
 #contents div:nth-child(3) {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+#contents div:nth-child(3) :is(h1, h3, p) {
+    font-weight: normal;
+}
+
+#contents div:nth-child(3) h1 {
+    font-size: 2.2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #contents div:nth-child(3) h3:nth-child(3) {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
     align-self: flex-end;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+#contents div:nth-child(3) h3:nth-child(3) span:nth-child(1) {
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+#contents> h2:last-of-type {
+    font-weight: normal;
 }
