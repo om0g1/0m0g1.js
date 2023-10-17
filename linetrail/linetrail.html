@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #020202;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        let points = [];
+        const canvas = document.getElementById("canvas");
+        const pen = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        pen.shadowColor = "#00a4eb";
+        pen.shadowBlur = 20;
+        pen.lineWidth = 3;
+
+        function drawTrail() {
+            pen.clearRect(0, 0, canvas.width, canvas.height);
+            pen.strokeStyle = "whitesmoke";//"#44e8ff";
+            pen.beginPath();
+            for (let i = 0; i < points.length; i++) {
+                pen.lineTo(points[i].x, points[i].y);
+            }
+            pen.stroke();
+        }
+
+        document.onmousemove = (e) => {
+            if (points.length < 40) {
+                points.push({
+                    x: e.clientX,
+                    y: e.clientY
+                })
+            }
+            
+        };
+
+        setInterval(() => {
+            drawTrail();
+            points.shift();
+        }, 40)
+    </script>
+</body>
+</html>
