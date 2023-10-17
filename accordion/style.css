@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+body {
+    background: #020202;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#accordion-wrapper {
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to bottom right, #00a4eb, #eba4eb);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#accordion {
+    width: 100%;
+    padding: 2% 12%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+#accordion li{
+    width: 5%;
+    height: 270px;
+    border-radius: 10rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: cover;
+    transition: all 0.7s ease-in-out;
+    border: 1px solid #ffffff01;
+}
+
+#accordion li:hover {
+    width: 50%;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #00a4eb01;
+    scale: 1.1;
+}
+
+#accordion li img {
+    height: 100%;
+    transition: all 0.7s ease-in-out;
+}
