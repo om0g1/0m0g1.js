@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+
+        canvas {
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fireCanvas" width="800" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('fireCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawFire() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height - 20;
+            const baseWidth = 50;
+            const baseHeight = 100;
+            const flameHeight = 80;
+            const flameWidth = 30;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw flame
+            ctx.beginPath();
+            ctx.moveTo(centerX - flameWidth / 2, centerY);
+            ctx.lineTo(centerX + flameWidth / 2, centerY);
+            ctx.lineTo(centerX, centerY - flameHeight);
+            ctx.closePath();
+            ctx.fillStyle = "orange";
+            ctx.fill();
+
+            // Draw base
+            ctx.beginPath();
+            ctx.moveTo(centerX - baseWidth / 2, centerY);
+            ctx.lineTo(centerX + baseWidth / 2, centerY);
+            ctx.lineTo(centerX + baseWidth / 2, centerY + baseHeight);
+            ctx.lineTo(centerX - baseWidth / 2, centerY + baseHeight);
+            ctx.closePath();
+            ctx.fillStyle = "#333";
+            ctx.fill();
+        }
+
+        function animateFire() {
+            requestAnimationFrame(animateFire);
+            drawFire();
+        }
+
+        animateFire();
+    </script>
+</body>
+</html>
