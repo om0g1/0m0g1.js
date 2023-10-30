@@ -67,7 +67,7 @@ function createParticles() {
   }
 }
 
-const PiBy180 = Math.PI / 180;
+const szXPiBy180 = Math.PI / 180;
 
 function moveParticles() {
   pen.clearRect(0, 0, canvas.width, canvas.height);
