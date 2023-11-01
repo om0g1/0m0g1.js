@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#App {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 6vh 88vh 6vh;
+}
+
+#navbar {
+    padding: 0.5rem;
+    background-color: #333333;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#working-area {
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+}
+
+#sidebar {
+    background-color: #333333;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#toolbar ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 0.5rem;
+    justify-items: center;
+}
+
+#canvas-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #141414;
+}
+
+#canvas-container {
+    position: absolute;
+    border: 1px solid black;
+    display: grid;
+}
+
+#canvas-container> canvas {
+    grid-area: 1/1;
+}
+
+#canvas {
+    background-color: white;
+}
+
+#grid-canvas {
+    pointer-events: none;
+}
+
+#footer {
+    background-color: #333333;
+    border-top: 1px solid black;
+}
