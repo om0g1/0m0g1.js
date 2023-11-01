@@ -50,23 +50,45 @@ body {
     gap: 0.5rem;
 }
 
+#navbar ul li a {
+    color: whitesmoke;
+}
+
 #working-area {
     display: grid;
     grid-template-columns: 10vw 80vw 10vw;
 }
 
 #sidebar {
+    padding: 0.5rem;
     background-color: #333333;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
 
+#toolbar {
+    height: 75%;
+}
+
 #toolbar ul {
     width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 45% 45%;
     gap: 0.5rem;
     justify-items: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+}
+
+#color-swatch input[type="color"] {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 #canvas-wrapper {
